@@ -87,7 +87,7 @@ Output files:
 cd $CALIB_AE_RSP/
 mkdir sar
 
-mv $CALIB_DATA/*sar* ./sar/.
+cp $CALIB_DATA/*sar* ./sar/.
 
 cd eff_area/
 
@@ -116,5 +116,49 @@ Input files:
 Output files:
 - $CALIB_AE_RSP/AG_GRID_G0017_S${filter}${eventtype}_I0023.edp.gz
 
+cd $CALIB_AE_RSP/
 
+mkdir edp
+ 
+cp $CALIB_DATA/*.edp ./edp/
 
+cd energy_disp/
+
+idl
+
+DL> .r AGILE_write_all_edp_I0023
+
+% Compiled module: READEDP_I0023.
+
+% Compiled module: INTERP_EDP6.
+
+% Compiled module: $MAIN$.
+
+% - .edp directory [0 = $CALIB_AE_RSP/edp, 1 = new directory]:0
+
+% - .rsp directory [0 = $CALIB_AE_RSP/respp, 1 = new directory]:0
+
+% Compiled module: MRDFITS.
+
+...
+
+## Point Spread Function
+
+Input files:
+- $CALIB_DATA/*.flg
+- $CALIB_DATA/*.dat
+
+Output files:
+- $CALIB_AE_RSP/psdfit/AG_GRID_G0017_SF*_I0023.psd.gz
+- $CALIB_AE_RSP/psdfit/psdfit_F*_table.fits.gz
+- $CALIB_DATA/ SIM000000_3901_1__${theta}_${phi}_${filter}.out
+
+cd $CALIB_AE_RSP/
+
+mkdir psdfit
+
+cp $CALIB_DATA/*.psd.gz ./psdfit/
+
+cd psf/
+
+sh createpsd.sh 
