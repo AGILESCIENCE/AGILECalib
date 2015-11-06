@@ -8,12 +8,15 @@ For a full explanation of the whole procedure see V. Fioretti et al., "AGILE Sci
 
 Modify the profile according to your settings:
 - CALIB_DATA = path to the input .flg and .dat files. On bash:
+
 export CALIB_DATA=<path>
 
 - CALIB_AE_RSP = path to the output .ae and .dat files. On bash:
+
 export CALIB_AE_RSP =<path>
 
 - ADC_PATH = path to the ADC scientific analysis pipeline:
+
 export ADC_PATH=<path>
 
 Load the profile:
@@ -36,5 +39,26 @@ IDL> .r AGILE_mat_ae_band_loop
 % - Enter calibration source [Vela or Crab]:Vela
 
 Processing file ... SIM000000_3901_1_Vela_30_00_FT3ab.flg
+
+....
+
+The output files are generated in $CALIB_DATA:
+- <filename>.ae
+- <filename>.rsp
+- <filename>.ps
+
+## Effective area - Step 1
+
+Create the directory to store the .ae and .rsp files and set the CALIB_AE_RSP variable.
+
+mkdir AE_RSP_DIR
+
+export CALIB_AE_RSP=<path-to>/AE_RSP_DIR
+
+mv $CALIB_DATA/*.ae $CALIB_AE_RSP
+mv $CALIB_DATA/*.rsp $CALIB_AE_RSP
+@cd $CALIB_AE_RSP/@
+
+
 
 
