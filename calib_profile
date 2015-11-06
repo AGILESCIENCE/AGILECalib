@@ -1,0 +1,11 @@
+echo "AGILECalib ambient activated"
+
+# Path to the input .flg and .dat files:
+export CALIB_DATA=/home/calib/VF_CALIB_TEST/INPUT_DATA
+
+# Path to the output .ae and .dat files:
+export CALIB_AE_RSP=/home/calib/VF_CALIB_TEST/AE_RSP_DIR
+
+# Path to the ADC scientific analysis pipeline
+export ADC_PATH=$HOME/ADC
+
