@@ -55,10 +55,66 @@ mkdir AE_RSP_DIR
 
 export CALIB_AE_RSP=<path-to>/AE_RSP_DIR
 
-mv $CALIB_DATA/*.ae $CALIB_AE_RSP
-mv $CALIB_DATA/*.rsp $CALIB_AE_RSP
-@cd $CALIB_AE_RSP/@
+mkdir $CALIB_AE_RSP/aref
 
+mkdir $CALIB_AE_RSP/resp
+
+mv $CALIB_DATA/*.ae $CALIB_AE_RSP/aref
+
+mv $CALIB_DATA/*.rsp $CALIB_AE_RSP/resp
+
+cd eff_area/
+
+idl
+
+IDL> .r AGILE_mksar_loop
+
+% Compiled module: $MAIN$.
+
+% - .ae directory [0 = $CALIB_AE_RSP/aref, 1 = new directory]:0
+
+...
+
+## Effective area - Step 2
+
+Input files:
+-  AG_GRID_G0017_S0001_I0007_template.sar.gz
+-  $CALIB_AE_RSP/aref/${filter}_${theta}_${phi}.txt
+
+Output files:
+- $CALIB_AE_RSP/sar/AG_GRID_G0017_S${filter}${eventtype}_I0023.sar.gz
+
+cd $CALIB_AE_RSP/
+mkdir sar
+
+mv $CALIB_DATA/*sar* ./sar/.
+
+cd eff_area/
+
+idl
+
+IDL> .r AGILE_write_all_sar_I0023
+
+% Compiled module: READAEFF_I0023.
+
+% Compiled module: INTERP_SAR_I0023.
+
+% Compiled module: $MAIN$.
+
+% - .sar.gz directory [0 = $CALIB_AE_RSP/sar, 1 = new directory]:0
+
+% - .ae directory [0 = $CALIB_AE_RSP/aref, 1 = new directory]:0
+
+...
+
+## Energy dispersion
+
+Input files:
+- $CALIB_AE_RSP/edp/edptest_2.edp
+- $CALIB_AE_RSP/resp/SIM000000_3901_1_Vela_${theta}_${phi}_${filter}.rsp
+
+Output files:
+- $CALIB_AE_RSP/AG_GRID_G0017_S${filter}${eventtype}_I0023.edp.gz
 
 
 
