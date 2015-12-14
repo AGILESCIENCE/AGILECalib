@@ -57,7 +57,7 @@ for phiind = 0,(n_elements(phi)-1) do for theind = 0, (n_elements(the)-1) do for
 	print, 'Processing file ... SIM000000_3901_1_'+spec+'_'+the[theind]+'_'+phiphiind+'_'+fil[filind]+'.flg'
 
 	c=STRSPLIT( fileflg ,'_F',/extract,/reg)
-	run=c(0)
+	run=c[0]
 	filetelem=run+'.dat'
 
 	ee=mrdfits(fileflg,/fsc,1)
