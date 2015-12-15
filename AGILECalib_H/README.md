@@ -150,8 +150,8 @@ Input files:
 
 Output files:
 - $CALIB_AE_RSP/psdfit/AG_GRID_G0017_SF*_H0025.psd.gz
-- $CALIB_AE_RSP/psdfit/psdfit_F*_table.fits.gz
-- $CALIB_DATA/ SIM000000_3901_1__${theta}_${phi}_${filter}.out
+- $CALIB_AE_RSP/psdfit/psdfit_H_F*_table.fits.gz
+- $CALIB_DATA/ SIM000000_3901_1_Vela_H_${theta}_${phi}_${filter}.out
 
 cd $CALIB_AE_RSP/
 
