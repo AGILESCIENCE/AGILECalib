@@ -1,5 +1,6 @@
 # AGILECalib
 The software suite for the production of the AGILE mission (Tavani et al. 2009) calibration matrix.
+The present software is for the AGILE BUILD21 scientific analysis.
 Data inputs for the production of the I0023 release is also included.
 
 For a full explanation of the whole procedure see V. Fioretti et al., "AGILE Scientific Analysis: Calibration matrix production", INAF/IASF – Bologna Technical Report 653/2015
