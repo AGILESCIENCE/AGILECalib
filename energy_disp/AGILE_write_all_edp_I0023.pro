@@ -48,7 +48,7 @@ initheads, head0, head1, head2, fileid
 ;help,/str,table,flags,labels
 
 filters = ['F4','FM','FT3ab']
-status = ['G','L','S']
+status = ['G','L','S','T']
 thetas = ['01','30','35','45','50','60']
 nthetas = n_elements(thetas)
 phis = ['00','45']
