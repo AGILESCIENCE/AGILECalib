@@ -93,7 +93,7 @@ oplot,er,smooth(cal/ff,2),psym=-3,color=1, thick=3
 oplot,er,smooth(cas/ff,2),psym=-3,color=2, thick=3
 ;oplot,er,smooth(ca31/ff,2),psym=-6,color=verde
 oplot,er,smooth(cag/ff,2),psym=-3,color=0, thick=3
-oplot,er,smooth(cagls/ff,2),psym=-3,color=verde, thick=3
+oplot,er,smooth(cagls/ff,2),psym=-3,color=3, thick=3
 
 
 ;legend,['F4','F2','FT3-0','FT3-1'],color=[nero,blu,rosso,verde],linestyle=[0,0,0,0],/bot,/rig
