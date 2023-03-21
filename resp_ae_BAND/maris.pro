@@ -28,7 +28,7 @@ for j=0,2 do begin
        
 endfor
 
-wc=where((ee.evstatus eq tipo(0)) and (ee.evstatus eq tipo(1)) and (ee.evstatus eq tipo(2)))
+wc=where((ee.evstatus eq tipo(0)) or (ee.evstatus eq tipo(1)) or (ee.evstatus eq tipo(2)))
 mat=matmake16(a(1,wc)*1000,ee(wc).energy)
 mmat(3,*,*)=mat
 

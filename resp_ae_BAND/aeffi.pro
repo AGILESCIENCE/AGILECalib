@@ -35,7 +35,7 @@ pro aeffi,ee, a, run, fil, inde, bol
 wg=where((ee.evstatus eq 'G') eq bol)
 wl=where((ee.evstatus eq 'L') eq bol)
 ws=where((ee.evstatus eq 'S') eq bol)
-wgls = where(((ee.evstatus eq 'G') eq bol) and ((ee.evstatus eq 'L') eq bol) and ((ee.evstatus eq 'S') eq bol))
+wgls = where(((ee.evstatus eq 'G') eq bol) or ((ee.evstatus eq 'L') eq bol) or ((ee.evstatus eq 'S') or bol))
 
 ;w31=where((ee31.evstatus eq tip) eq bol)
 
