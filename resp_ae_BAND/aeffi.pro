@@ -9,6 +9,7 @@
 ; ---------------------------------------
 ; Modification history:
 ; 24/10/2013: JPG removed, saving output in postscript (V. Fioretti)
+; 03/10/2023: Adding T class (V. Fioretti)
 
 pro aeffi,ee, a, run, fil, inde, bol
 
@@ -98,7 +99,7 @@ oplot,er,smooth(cagls/ff,2),psym=-3,color=3, thick=3
 
 ;legend,['F4','F2','FT3-0','FT3-1'],color=[nero,blu,rosso,verde],linestyle=[0,0,0,0],/bot,/rig
 
-fits_write,run+'_'+fil+'.ae',[ transpose(er(0:15)),    $
+ffits_write,run+'_'+fil+'.ae',[ transpose(er(0:15)),    $
                            transpose(smooth(cag/ff,2)), $
                            transpose(smooth(cal/ff,2)), $
                            transpose(smooth(cas/ff,2)), $
