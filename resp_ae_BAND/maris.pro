@@ -19,7 +19,7 @@ pro maris,ee,a,the,phi,run,fil
 
 
 tipo=['G','L','S']
-mmat=fltarr(3,16,16)
+mmat=fltarr(4,16,16)
 
 for j=0,2 do begin
 
