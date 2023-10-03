@@ -19,7 +19,7 @@ pro maris_H,ee,a,the,phi,run,fil
 
 
 tipo=['G','L','S']
-mmat=fltarr(4,16,16)
+mmat=fltarr(4,14,14)
 
 for j=0,2 do begin
 
@@ -28,10 +28,6 @@ for j=0,2 do begin
     mmat(j,*,*)=mat
        
 endfor
-
-wc=where((ee.evstatus eq tipo(0)) or (ee.evstatus eq tipo(1)) or (ee.evstatus eq tipo(2)))
-mat=matmake14(a(1,wc)*1000,ee(wc).energy)
-mmat(3,*,*)=mat
 
 ;map,total(mmat(0,*,*),1),/scl
 
