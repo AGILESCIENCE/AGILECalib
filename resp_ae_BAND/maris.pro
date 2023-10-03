@@ -9,7 +9,8 @@
 ; Authors:
 ; A. Giuliani, A. Chen (INAF/IASF Mi)
 ; ---------------------------------------
-
+; Modification history:
+; 03/10/2023: Adding T class (V. Fioretti)
 
 
 
@@ -27,6 +28,10 @@ for j=0,2 do begin
     mmat(j,*,*)=mat
        
 endfor
+
+wc=where((ee.evstatus eq tipo(0)) or (ee.evstatus eq tipo(1)) or (ee.evstatus eq tipo(2)))
+mat=matmake16(a(1,wc)*1000,ee(wc).energy)
+mmat(3,*,*)=mat
 
 ;map,total(mmat(0,*,*),1),/scl
 
