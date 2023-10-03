@@ -10,6 +10,7 @@
 ; Modification history:
 ; 24/10/2013: JPG removed, saving output in postscript (V. Fioretti)
 ; 13/12/2015: new Fermi-style energy bands (A. Chen)
+; 03/10/2023: T class added (V. Fioretti)
 
 pro aeffi_H,ee, a, run, fil, inde, bol
 

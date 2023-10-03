@@ -10,7 +10,7 @@
 ; A. Giuliani, A. Chen (INAF/IASF Mi)
 ; ---------------------------------------
 ; 13/12/2015: new Fermi-style energy bands (A. Chen)
-
+; 03/10/2023: T class added (V. Fioretti)
 
 
 
