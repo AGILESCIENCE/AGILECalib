@@ -36,11 +36,14 @@ pro aeffi_H,ee, a, run, fil, inde, bol
 wg=where((ee.evstatus eq 'G') eq bol)
 wl=where((ee.evstatus eq 'L') eq bol)
 ws=where((ee.evstatus eq 'S') eq bol)
+wgls = where(((ee.evstatus eq 'G') eq bol) or ((ee.evstatus eq 'L') eq bol) or ((ee.evstatus eq 'S') or bol))
 ;w31=where((ee31.evstatus eq tip) eq bol)
 
 cag=canali_H(a(1,wg)*1000)
 cal=canali_H(a(1,wl)*1000)
 cas=canali_H(a(1,ws)*1000)
+cagls=canali(a(1,wgls)*1000)
+
 ;ca31=canali(a31(1,w31)*1000)
 
 ;canal=[10.,35,50,71,100,141,200,283,400,632,1000,1732,3000,5477,10000,20000,100000]
@@ -69,21 +72,22 @@ TVLCT, 255 * RED, 255 * GREEN, 255 * BLUE
 
 plot_oo,er,smooth(cag/ff,2) $
          ,psym=-3,yrange=[1,1000.],xrange=[10,100000.],xstyle=1,ystyle=1     $
-         ,xtitle='Energy [MeV]',ytitle='Effective Area [cm!u2!n]',title='black:G, blue:L, red:S'
+         ,xtitle='Energy [MeV]',ytitle='Effective Area [cm!u2!n]',title='black:G, blue:L, red:S, green:T'
 
 oplot,er,smooth(cal/ff,2),psym=-3,color=1, thick=3
 oplot,er,smooth(cas/ff,2),psym=-3,color=2, thick=3
 ;oplot,er,smooth(ca31/ff,2),psym=-6,color=verde
 oplot,er,smooth(cag/ff,2),psym=-3,color=0, thick=3
+oplot,er,smooth(cagls/ff,2),psym=-3,color=3, thick=3
 
 
 ;legend,['F4','F2','FT3-0','FT3-1'],color=[nero,blu,rosso,verde],linestyle=[0,0,0,0],/bot,/rig
 
-fits_write,run+'_'+fil+'_H.ae',[ transpose(er[0:numchannels-1]),    $
+fits_write,run+'_'+fil+'.ae',[ transpose(er(0:15)),    $
                            transpose(smooth(cag/ff,2)), $
                            transpose(smooth(cal/ff,2)), $
-                           transpose(smooth(cas/ff,2))  ]
-
+                           transpose(smooth(cas/ff,2)), $
+                           transpose(smooth(cagls/ff,2))  ]
 
 
 ;fits_write,fileflg+'.aeG',smooth(cag/ff,2)
