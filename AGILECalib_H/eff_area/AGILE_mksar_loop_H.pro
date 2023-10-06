@@ -17,6 +17,7 @@
 ; 13/11/2013: selecting the /aref directory (V. Fioretti)
 ; 6/11/2015: loading the environment variable (V. Fioretti)
 ; 13/12/2015: new Fermi-style energy bands (A. Chen)
+; 6/10/2023: T class added (V. Fioretti)
 
 ae_path = GETENV('CALIB_AE_RSP')
 ae_path = ae_path+'/aref'
@@ -52,13 +53,14 @@ ener=[10,35,50,71,100,173,300,548,1000,1732,3000,5477,10000,20000,100000]
 
                         openw,u,fileperandrew,width=1000,/get_lun
                         printf,u
-                        printf,u,'       E        AeffG        AeffL        AeffS'
+                        printf,u,'       E        AeffG        AeffL        AeffS       AeffT'
                         printf,u
 
                         for i=0,n_elements(ener)-1 do begin
                                 printf,u, ener[i], area_H(ae_path=ae_path, energ=ener[i], tip='G', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
                                 area_H(ae_path=ae_path, energ=ener[i], tip='L', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
-                                area_H(ae_path=ae_path, energ=ener[i], tip='S', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec)
+                                area_H(ae_path=ae_path, energ=ener[i], tip='S', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
+                                area_H(ae_path=ae_path, energ=ener[i], tip='T', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec)
 
                         endfor
                         free_lun,u

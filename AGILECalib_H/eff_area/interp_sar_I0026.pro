@@ -1,13 +1,12 @@
 ; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-; %            interp_sar_I0026              %
+; %            interp_sar_I0026             %
 ; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ; ---------------------------------------
 ; Authors:
 ; A. Chen (INAF/IASF Mi)
 ; ---------------------------------------
-; Modification History:
-; 06/10/2023: copied from interp_sar_I0023.pro (V. Fioretti)
-; 06/10/2023: I0026 added (V. Fioretti)
+; 6/10/2023: copied from interp_sar_I0025.pro (V. Fioretti)
+; 6/10/2023: H0026 added  (V. Fioretti)
 
 pro interp_sar_I0026, table, allareas, labels, energies, thetas, phis, istatus, factor = factor
 

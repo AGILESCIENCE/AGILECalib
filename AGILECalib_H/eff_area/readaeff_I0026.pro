@@ -2,7 +2,7 @@
 ; %             readaeff_I0026.pro           %
 ; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ; Description:
-; Routine called by AGILE_write_all_sar_I0026.pro
+; Routine called by AGILE_write_all_sar_H0026.pro
 ; Reading:
 ; - <filter>_<theta>_<phi>.txt
 ; ---------------------------------------
@@ -10,14 +10,14 @@
 ; A. Chen (INAF/IASF Mi)
 ; ---------------------------------------
 ; Modification history:
-; 06/10/2023: copied from readaeff_I0023.pro  (V. Fioretti)
-; 06/10/2023: I0026 and T class added (V. Fioretti)
+; 6/10/2023: copied from readaeff_I0025.pro (V. Fioretti)
+; 6/10/2023: H0026 and T class added  (V. Fioretti)
 
 pro readaeff_I0026, ae_path, filter, theta, phi, energies, area, directory = directory
 
 if n_elements(directory) eq 0 then begin
   directory=ae_path+'/'
-  filename = directory + filter + '_' + theta + '_' +  phi + '.txt'
+  filename = directory + filter + '_' + theta + '_' +  phi + '_H.txt'
 endif
 
 
@@ -44,6 +44,7 @@ area.G = agarr[1:num]
 area.L = alarr[1:num]
 area.S = asarr[1:num]
 area.T = aglsarr[1:num]
+
 
 end
 
