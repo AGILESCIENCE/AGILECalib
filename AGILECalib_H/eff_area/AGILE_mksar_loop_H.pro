@@ -43,7 +43,7 @@ for t=0, nthetas-1 do begin
 
 
                         ;ener=[35,50,71,100,141,200,283,400,632,1000,1732,3000,5477,10000,20000]
-ener=[10,35,50,71,100,173,300,548,1000,1732,3000,5477,10000,20000,100000]
+                        ener=[10,35,50,71,100,173,300,548,1000,1732,3000,5477,10000,20000,100000]
 
                         ;if theta eq 1 then str_theta='01' else str_theta=strtrim(theta,2)
                         ;if phi eq 0 then str_phi='00' else str_phi=strtrim(phi,2)
