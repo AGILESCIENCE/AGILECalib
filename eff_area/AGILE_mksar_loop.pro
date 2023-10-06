@@ -16,6 +16,7 @@
 ; Modification history:
 ; 13/11/2013: selecting the /aref directory (V. Fioretti)
 ; 6/11/2015: loading the environment variable (V. Fioretti)
+; 6/10/2023: T class added (V. Fioretti)
 
 ae_path = GETENV('CALIB_AE_RSP')
 ae_path = ae_path+'/aref'
@@ -50,13 +51,14 @@ for t=0, nthetas-1 do begin
 
                         openw,u,fileperandrew,width=1000,/get_lun
                         printf,u
-                        printf,u,'       E        AeffG        AeffL        AeffS'
+                        printf,u,'       E        AeffG        AeffL        AeffS       AeffT'
                         printf,u
 
                         for i=0,n_elements(ener)-1 do begin
                                 printf,u, ener[i], area(ae_path=ae_path, energ=ener[i], tip='G', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
                                 area(ae_path=ae_path, energ=ener[i], tip='L', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
-                                area(ae_path=ae_path, energ=ener[i], tip='S', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec)
+                                area(ae_path=ae_path, energ=ener[i], tip='S', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
+                                area(ae_path=ae_path, energ=ener[i], tip='T', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec)
 
                         endfor
                         free_lun,u
