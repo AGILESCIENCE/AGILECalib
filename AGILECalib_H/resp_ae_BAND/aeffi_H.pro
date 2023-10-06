@@ -38,12 +38,14 @@ wg=where((ee.evstatus eq 'G') eq bol)
 wl=where((ee.evstatus eq 'L') eq bol)
 ws=where((ee.evstatus eq 'S') eq bol)
 wgls = where(((ee.evstatus eq 'G') eq bol) or ((ee.evstatus eq 'L') eq bol) or ((ee.evstatus eq 'S') or bol))
+
 ;w31=where((ee31.evstatus eq tip) eq bol)
 
 cag=canali_H(a(1,wg)*1000)
 cal=canali_H(a(1,wl)*1000)
 cas=canali_H(a(1,ws)*1000)
 cagls=canali_H(a(1,wgls)*1000)
+
 ;ca31=canali(a31(1,w31)*1000)
 
 ;canal=[10.,35,50,71,100,141,200,283,400,632,1000,1732,3000,5477,10000,20000,100000]
