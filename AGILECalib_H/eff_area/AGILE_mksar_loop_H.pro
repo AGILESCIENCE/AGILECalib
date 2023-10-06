@@ -57,7 +57,7 @@ for t=0, nthetas-1 do begin
                         printf,u
 
                         for i=0,n_elements(ener)-1 do begin
-                                printf,u, ener[i], area(ae_path=ae_path, energ=ener[i], tip='G', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
+                                printf,u, ener[i], area_H(ae_path=ae_path, energ=ener[i], tip='G', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
                                 area_H(ae_path=ae_path, energ=ener[i], tip='L', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
                                 area_H(ae_path=ae_path, energ=ener[i], tip='S', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec),   $
                                 area_H(ae_path=ae_path, energ=ener[i], tip='T', theta=fix(str_theta[t]), phi=phi, filtro=filtro[f], spec=spec)
