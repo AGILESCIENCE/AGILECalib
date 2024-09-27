@@ -16,6 +16,7 @@
 ; Modification history:
 ; 13/11/2013: selecting the /aref directory (V. Fioretti)
 ; 6/11/2015: loading the environment variable (V. Fioretti)
+; 6/10/2023: T class added (V. Fioretti)
 
 ae_path = GETENV('CALIB_AE_RSP')
 ae_path = ae_path+'/aref'

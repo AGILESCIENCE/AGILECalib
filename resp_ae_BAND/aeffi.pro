@@ -9,6 +9,7 @@
 ; ---------------------------------------
 ; Modification history:
 ; 24/10/2013: JPG removed, saving output in postscript (V. Fioretti)
+; 03/10/2023: Adding T class (V. Fioretti)
 
 pro aeffi,ee, a, run, fil, inde, bol
 

@@ -14,7 +14,7 @@
 ; Modification history:
 ; 13/11/2013: taking the /aref directory as input (V. Fioretti)
 ; 13/12/2015: new Fermi-style energy bands (A. Chen)
-
+; 06/10/2023: T class added (V. Fioretti)
 
 
 function area_H,ae_path=ae_path,theta=theta,phi=phi,energy=energy,tip=tip,spec=spec,filtro=filtro
@@ -41,6 +41,7 @@ energie=af(0,*)
 if tip eq 'G' then aree=af(1,*)
 if tip eq 'L' then aree=af(2,*)
 if tip eq 'S' then aree=af(3,*)
+if tip eq 'T' then aree=af(4,*)
 
                 ;print,aree
 
